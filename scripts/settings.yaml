@@ -1,0 +1,39 @@
+# General settings for the threat intelligence platform
+platform:
+  name: "SafeMatrix"
+  version: "1.0"
+  description: "An advanced threat intelligence system."
+
+# TheHive integration settings
+thehive:
+  url: "http://localhost:9000"
+  api_key: "your_thehive_api_key"
+  verify_ssl: false  # Set to true if you want SSL verification
+
+# Splunk integration settings
+splunk:
+  url: "https://splunk.yourcompany.com:8088"
+  token: "your_splunk_token"
+  index: "your_splunk_index"
+
+# AWS S3 configuration for log collection
+aws_s3:
+  access_key_id: "your_aws_access_key_id"
+  secret_access_key: "your_aws_secret_access_key"
+  region: "us-east-1"
+  bucket_name: "aws-cloudtrail-logs-129543046295-50fd0d6b"
+
+# OSQuery monitoring settings
+osquery:
+  log_path: "/var/log/osquery/osqueryd.results.log"
+  query_timeout: 30  # Timeout for queries to be executed
+
+# Threat Intel settings
+threat_intel:
+  csv_file_path: "./data/threatintel.csv"
+  update_interval: 3600  # How often to check for new threat intel (in seconds)
+
+# Logging settings
+logging:
+  log_level: "DEBUG"  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_file: "./logs/app.log"

@@ -1,0 +1,30 @@
+[
+    {
+        "event_id": "12345",
+        "timestamp": "2025-04-24T12:34:56Z",
+        "alert_type": "Suspicious Activity",
+        "activity": "Multiple failed login attempts detected",
+        "severity": "High"
+    },
+    {
+        "event_id": "12346",
+        "timestamp": "2025-04-24T13:00:00Z",
+        "alert_type": "Phishing Email Detected",
+        "activity": "Suspicious email detected in inbox",
+        "severity": "Medium"
+    },
+    {
+        "event_id": "12347",
+        "timestamp": "2025-04-24T14:00:00Z",
+        "alert_type": "Suspicious Activity",
+        "activity": "Malware detected on endpoint",
+        "severity": "Critical"
+    },
+    {
+        "event_id": "12348",
+        "timestamp": "2025-04-24T15:00:00Z",
+        "alert_type": "Suspicious Activity",
+        "activity": "Attempted data exfiltration",
+        "severity": "High"
+    }
+]
