@@ -1,0 +1,53 @@
+version: '3'
+services:
+  thehive:
+    image: thehiveproject/thehive:latest
+    container_name: thehive
+    ports:
+      - "9000:9000"
+    environment:
+      - "CASSANDRA_HOST=cassandra"
+      - "ELASTICSEARCH_HOST=elasticsearch"
+      - "THEHIVE_URL=http://localhost:9000"
+      - "THEHIVE_API_KEY=your_api_key_here"
+    depends_on:
+      - cassandra
+      - elasticsearch
+    volumes:
+      - thehive_data:/data
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.1
+    container_name: elasticsearch
+    environment:
+      - "discovery.type=single-node"
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+  cassandra:
+    image: cassandra:3.11
+    container_name: cassandra
+    ports:
+      - "9042:9042"
+    environment:
+      - "CASSANDRA_CLUSTER_NAME=TheHiveCluster"
+      - "CASSANDRA_SEEDS=cassandra"
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+    cortex: 
+      image: thehiveproject/cortex:latest
+      container_name: cortex
+      ports:
+        - "9001:9001"
+      environment:
+        - "CORTEX_URL=http://localhost:9001"
+        - "CORTEX_API_KEY=your_api_key_here"
+      depends_on:
+        - elasticsearch
+        - cassandra
+      volumes:
+        - cortex_data:/data
+  networks:
+    thehive_network:
+      driver: bridge
