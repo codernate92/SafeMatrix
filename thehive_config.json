@@ -1,7 +1,0 @@
-{
-    "thehive_url": "http://your-thehive-instance:9000",
-    "api_key": "your-api-key",
-    "es_url": "http://localhost:9200",
-    "index": "threat_hunting_cases",
-    "template": "basic"
-}
