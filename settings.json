@@ -1,0 +1,15 @@
+{
+    "aws": {
+      "bucket": "your-s3-bucket-name",
+      "prefix": "AWSLogs/your-account-id/"
+    },
+    "thehive": {
+      "url": "http://localhost:9000",
+      "api_key": "your_thehive_api_key"
+    },
+    "splunk": {
+      "hec_url": "http://localhost:8088",
+      "token": "your_splunk_token"
+    }
+  }
+  

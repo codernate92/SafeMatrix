@@ -1,0 +1,7 @@
+{
+    "splunk_host": "http://your-splunk-instance:8088",
+    "splunk_token": "your-hec-token",
+    "index": "security_logs",
+    "sourcetype": "json",
+    "time_format": "%Y-%m-%dT%H:%M:%SZ"
+}
