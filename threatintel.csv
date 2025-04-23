@@ -1,3 +1,0 @@
-indicator, type, source
-8.8.8.8, ip, custom_list
-malicious.com, domain, custom_list
